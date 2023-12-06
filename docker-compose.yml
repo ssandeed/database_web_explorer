@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  postgres_gp14:
+    container_name: postgres
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=postgres
+
+    ports:
+      - "5423:5432"
+
+  streamlit:
+    container_name: streamlit
+    build: .
+    ports:
+      - 8501:8501
+    volumes:
+      - ./src:/app/src
+      - ./app/streamlit_app.py:/app/streamlit_app.py
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_DB=postgres
+      - POSTGRES_PORT=5432
+    depends_on:
+      - postgres_gp14

@@ -1,11 +1,13 @@
 # Database Web Explorer App using Streamlit
 
 ## Description
-In this project, developed an interactive web application using Streamlit and will connect to a Postgres database and perform some exploratory data analysis on selected tables. The web application needs to be containerised with Docker and will be running using python 3.8.2.
+In this project, I developed an interactive web application using Streamlit and will connect to a Postgres database and perform some exploratory data analysis on selected tables. The web application needs to be containerised with Docker and run using python 3.8.2.
 
 ## How to Setup
-1.Unzip the file
-2.Open the Unix command and use command "cd "the path of the main folder" to relocate the wokring path   
+
+1. Unzip the file
+
+2. Open the Unix command and use the command "cd "the path of the main folder" to relocate the working path   
 
 Run by python 3.8.2
   
@@ -24,19 +26,19 @@ Clone the repository
 git clone git@github.com:ssandeed/dsp_at3_14.git
 ```
   
-1. Open new project with all the supported files in an python IDE
+1. Open a new project with all the supported files in a python IDE
   
-2. In the terminal, make sure current directory is the project file directory
+2. In the terminal, make sure the current directory is the project file directory
   
-3. Run **docker build .**  in the terminal to builds Docker images from Dockerfile 
+3. Run **docker build .**  in the terminal to build Docker images from Dockerfile 
   
-4. Lastly run **docker-compose up -d** and compose will start
+4. Lastly, run **docker-compose up -d**, and compose will start
   
 5. To run the app, open any browser and go to **http://localhost:8501/**
   
-6. When web app opens, then provide database credentials to access database
+6. When the web app opens, then provide database credentials to access the database
   
-7. For accessing local machine Postgres Database, Database Host should be: **host.docker.internal**
+7. For accessing the local machine Postgres Database, the Database Host should be: **host.docker.internal**
   
 Whenever any change happens in the app/streamlit_app.py, the steamlit application will update too. 
 
@@ -46,13 +48,13 @@ To stop the application the application, either
 docker-compose stop
 ```
 
-to stop the application, or use 
+to stop the application or use 
 
 ```bash
 docker-compose down --rmi all
 ```
 
-to stop the application, remove the stopped containers and optionally `--rmi all` / remove all images associated in the docker-compose.yml file.
+to stop the application, remove the stopped containers and optionally `--rmi all` / remove all images associated with the docker-compose.yml file.
 
 ## Project Structure
 
